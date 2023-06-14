@@ -2,8 +2,12 @@
 
 const express = require('express');
 const app = express();
+const cors = require('cors'); // to fix cross-origin issuses
 const port = 5000;
 
+
+//Use cross-origin middleware
+app.use(cors());
 //Define routes
 const routes = require('./routes');
 

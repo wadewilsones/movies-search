@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * This component contains front-end search functionality
@@ -7,17 +7,32 @@ export default function Search() {
 
     //State to track search value
     const [movieTitle, setMovieTitle] = useState("");
+    const [searchedMovie, setSearchedMovie] = useState(null);
 
     //Change state of title value
     const changeTitleValue = (e) => {
         setMovieTitle(e.target.value);
     }
+    
+    //Refreshing when searchedMovie set
+    useEffect(() => {
+      console.log(searchedMovie)
+     }, [searchedMovie])
 
     // Send request
-    const onFormSubmit = (e) => {
-
+     const onFormSubmit = async (e) => {
+      
         e.preventDefault();
-        console.log(movieTitle);
+        //API call to back end to fetch movie
+        try{
+            const response = await fetch(`http://localhost:5000/api/movies?movieTitle=${movieTitle}`);
+            const responseJSON = await response.json();
+            //Assign response to searched Movie
+            setSearchedMovie(responseJSON);
+        }
+        catch(e){
+          console.log(e);
+        }
     }
 
     return (
@@ -26,6 +41,7 @@ export default function Search() {
             <input type="search" value={movieTitle} placeholder="Type your  title..." onChange={changeTitleValue}></input>
             <input type="submit" value='Search'></input>
         </form>
+
       </div>
     );
   }
