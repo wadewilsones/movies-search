@@ -1,6 +1,8 @@
 /**
  * Contains application routes
  */
+require('dotenv').config(); // add .env strings to file 
+
 const express = require('express');
 const router = express.Router();
 
@@ -12,31 +14,61 @@ router.get('/', (req, res) => {
 })
 
 //Get movie
-router.get('/api/movies', (req, res) => {
+router.get('/api/movies', async (req, res) => {
+    const movies = [];
     //Retrieve the parameter with movie Title
     const movieTitle = req.query.movieTitle;
     //Make API call to third party DB
-    const data = { selectedMovie: movieTitle};
-    res.json(data);
+    try{
+        const data = await sendRequest(movieTitle);
+        // Add only 6 movies, include only name and year
+        if(data.results.length > 5){
+
+            for(i=0; i<5; i++){
+                //Create an movie object and add to array
+                movies.push({
+                    "ID":data.results[i].id, 
+                    "Title":data.results[i].original_title, 
+                    "Poster":data.results[i].poster_path, 
+                    "Year":data.results[i].release_date,
+                });
+            }
+        }
+       
+        res.json({"movies":movies});
+    }
+    catch(e){
+        res.status(500).json({e: e})
+    }
+
 })
 
 
 //API request
-const sendRequest = (movieTitle) =>{
+const sendRequest = async (movieTitle) =>{
 
-    const movieAPI = `https://api.themoviedb.org/3/search/movie?query=${movieTitle}`;
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer 9bcc574a089c3d3a0415c250e1fb8cb3'
-        }
-      };
-    //Fetch data
-    fetch(movieAPI, options)
-    .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.error('error:' + err));
+    data = {};
+    try{
+        const movieAPI = `https://api.themoviedb.org/3/search/movie?query=${movieTitle}`;
+        const options = {
+            method: 'GET',
+            headers: {
+              accept: 'application/json',
+              Authorization: `Bearer ${process.env.API_KEY}`
+            }
+          };
+        
+        //Fetch data from the URL and convert to JSON
+        const response = await fetch(movieAPI, options)
+        .then(response => response.json())
+        .then(json => {
+            data = json
+        })
+    }
+    catch(e){
+        console.error('error:' + e);
+    }
+    return  data;
 }
 
 //Export routes

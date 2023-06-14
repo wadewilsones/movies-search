@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 /**
  * This component contains front-end search functionality
  */
-export default function Search() {
+export default function Search({ search }) {
 
     //State to track search value
     const [movieTitle, setMovieTitle] = useState("");
@@ -16,7 +16,8 @@ export default function Search() {
     
     //Refreshing when searchedMovie set
     useEffect(() => {
-      console.log(searchedMovie)
+      //Pass data to Parent App
+      search(searchedMovie)
      }, [searchedMovie])
 
     // Send request
@@ -28,7 +29,7 @@ export default function Search() {
             const response = await fetch(`http://localhost:5000/api/movies?movieTitle=${movieTitle}`);
             const responseJSON = await response.json();
             //Assign response to searched Movie
-            setSearchedMovie(responseJSON);
+            setSearchedMovie(responseJSON.movies);
         }
         catch(e){
           console.log(e);
