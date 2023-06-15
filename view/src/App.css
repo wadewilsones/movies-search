@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   background:linear-gradient(180deg, rgba(49,2,93,1) 41%, rgba(66,1,44,1) 100%);
-  height: 100vh;
-  padding: 0 0 10em 0;
+  min-height: 100vh;
+  
 }
 
 
@@ -14,30 +14,28 @@
   /*Container with search results*/
   .moviesContainer{
 
-    width:650px;
-    padding: 30px 50px 90px 50px;
-    background-color: rgba(35, 12, 72, 0.301);
-    border-radius: 20px;
+    width:1100px;
+    padding: 3em 3em 5em 5em;
+    background-color: rgba(182, 170, 183, 0.068);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     display:grid;
-    grid-template-columns: 32% 32% 32%;
-    grid-gap: 3%;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap:2%;
     margin: 3em auto 0;
   }
 
   .moviesContainer h2{
 
     color:white;
+    margin-bottom: 1em;
+    grid-row-start: 1;
     grid-column-start: 1;
     text-align: left;
-    grid-column-end: 4;
+    grid-column-end: 5;
     font-weight: 500;
   }
 
-  .explorationContainer{
-    margin: auto;
-    height: 53.8vh;
-    background:linear-gradient(180deg, rgba(49,2,93,1) 41%, rgba(66,1,44,1) 100%);
-  }
   
   /*BLOCK IF NO MOVIE WAS FOUND*/
   .NotFound{
@@ -70,6 +68,147 @@
   .NotFound img:before{
     filter:blur(20px);
   }
+
+}
+
+
+/*TABLET*/
+@media screen and (min-width:700px) and (max-width:1199px){
+
+
+  .App {
+    text-align: center;
+    background:linear-gradient(180deg, rgba(49,2,93,1) 41%, rgba(66,1,44,1) 100%);
+    min-height: 100vh;
+    padding-bottom: 3em;
+  }
+  
+
+  /*Container with search results*/
+  .moviesContainer{
+
+    width:90%;
+    margin: 5em auto;
+    display: grid;
+    padding: 1em 1em 8em;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap:5%;
+    background-color: rgba(182, 170, 183, 0.068);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .moviesContainer h2{
+
+    color:white;
+    padding: 1em 0 0 1em;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    text-align: left;
+    grid-column-end: 4;
+    font-weight: 500;
+  }
+
+  
+  /*BLOCK IF NO MOVIE WAS FOUND*/
+  .NotFound{
+
+    width:300px;
+    padding: 4em;
+    border-radius: 210px;
+    height: 574px;
+    margin: auto;
+    margin: 3em auto 0;
+
+
+  }
+  .NotFound p{
+
+   color:rgb(185, 197, 200);
+   font-size: 2em;
+   line-height: 2;
+   margin-top: 10px;
+   text-align: center;
+  }
+
+  .NotFound img{
+    width:200px;
+    display: block;
+    margin-left: 2.5em;
+    height: 210px;
+  }
+
+  .NotFound img:before{
+    filter:blur(20px);
+  }
+
+}
+
+/*PHONE*/
+@media screen and (min-width:200px) and (max-width:699px){
+
+
+  .App {
+    text-align: center;
+    background:linear-gradient(180deg, rgba(49,2,93,1) 41%, rgba(66,1,44,1) 100%);
+    min-height: 100vh;
+    padding-bottom: 3em;
+  }
+  
+
+  /*Container with search results*/
+  .moviesContainer{
+
+    width:90%;
+    margin: 5em auto;
+    display: grid;
+    padding: 1em 1em 15em;
+    grid-template-columns: 48% 48%;
+    grid-gap:5%;
+    background-color: rgba(182, 170, 183, 0.068);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .moviesContainer h2{
+
+    color:white;
+    padding: 0.6em 0 0 1em;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    text-align: left;
+    grid-column-end: 3;
+    font-weight: 500;
+  }
+
+  /*BLOCK IF NO MOVIE WAS FOUND*/
+  .NotFound{
+
+    width:300px;
+    padding: 4em;
+    border-radius: 210px;
+    height: 574px;
+    margin: auto;
+    margin: 3em auto 0;
+
+
+  }
+  .NotFound p{
+
+   color:rgb(185, 197, 200);
+   font-size: 2em;
+   line-height: 2;
+   margin-top: 10px;
+   text-align: center;
+  }
+
+  .NotFound img{
+    width:200px;
+    display: block;
+    margin-left: 2.5em;
+    height: 210px;
+  }
+
 
 }
 

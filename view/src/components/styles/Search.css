@@ -1,3 +1,5 @@
+
+/*DESKTOP*/
 @media screen and (min-width:1200px){
 
 
@@ -14,14 +16,15 @@
         border-radius:10px;
         background-color: rgba(118, 113, 113, 0.62);
         box-shadow: 0 10px 30px #2b2b2b;
-
         height: 50px;
+        font-size:1em;
         color:rgb(222, 222, 222);
         padding-left: 20px;
     }
 
     ::placeholder {
         color: #e5dcdc8f; /* Placeholder text color */
+        font-size:1.2em;
     }
 
     .searchForm input[type = submit]{
@@ -42,4 +45,100 @@
    
     }
 
+}
+
+/*TABLET*/
+@media screen and (min-width:700px) and (max-width:1199px){
+
+    .searchForm{
+
+        width:600px;
+        margin: 4em auto 0;
+    }
+
+
+    .searchForm input[type = search]{
+
+        width:70%;
+        border-radius:10px;
+        background-color: rgba(118, 113, 113, 0.62);
+        box-shadow: 0 10px 30px #2b2b2b;
+        height: 50px;
+        font-size:1em;
+        color:rgb(222, 222, 222);
+        padding-left: 20px;
+    }
+
+    ::placeholder {
+        color: #e5dcdc8f; /* Placeholder text color */
+        font-size:1.2em;
+    }
+
+    .searchForm input[type = submit]{
+
+        width:100px;
+        border-radius:5px;
+        box-shadow: 0 10px 30px #2b2b2b;
+        height: 45px;
+        background-color: rgb(188, 15, 113);
+        color:white;
+        font-size:1.1em;
+        font-weight:500;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .searchForm input[type = submit]:hover{
+        background-color: rgb(103, 1, 143);
+        color:rgb(255, 255, 255);
+   
+    }
+
+}
+
+/*PHONE*/
+@media screen and (min-width:200px) and (max-width:699px){
+    .searchForm{
+
+        width:100%;
+        margin: 2em auto 2em;
+    }
+
+
+    .searchForm input[type = search]{
+
+        width:70%;
+        border-radius:10px;
+        background-color: rgba(118, 113, 113, 0.62);
+        box-shadow: 0 10px 30px #2b2b2b;
+        height: 50px;
+        font-size:1em;
+        color:rgb(222, 222, 222);
+        padding-left: 20px;
+    }
+
+    ::placeholder {
+        color: #e5dcdc8f; /* Placeholder text color */
+        font-size:1.2em;
+    }
+
+    .searchForm input[type = submit]{
+
+        width:100px;
+        border-radius:5px;
+        box-shadow: 0 10px 30px #2b2b2b;
+        height: 45px;
+        background-color: rgb(188, 15, 113);
+        color:white;
+        font-size:1.1em;
+        font-weight:500;
+        cursor: pointer;
+        margin-left: 20px;
+    }
+
+    .searchForm input[type = submit]:hover{
+        background-color: rgb(103, 1, 143);
+        color:rgb(255, 255, 255);
+   
+    }
 }

@@ -22,9 +22,9 @@ router.get('/api/movies', async (req, res) => {
     try{
         const data = await sendRequest(movieTitle);
         // Add only 6 movies, include only name and year
-        if(data.results.length > 5){
+        if(data.results.length > 6){
 
-            for(i=0; i<5; i++){
+            for(i=0; i<6; i++){
                 //Create an movie object and add to array
                 movies.push({
                     "ID":data.results[i].id, 
