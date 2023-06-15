@@ -1,5 +1,6 @@
 import './App.css';
 import Search from './components/Search';
+import Header from './components/Header';
 import Movie from './components/Movie'
 import { useEffect, useState } from 'react';
 
@@ -20,21 +21,29 @@ function App() {
 
   return (
     <div className="App">
+      <Header></Header>
       <Search search = {search}></Search>
-
       {searchedMovie && searchedMovie.length > 0? 
       //List movies
-      searchedMovie.map((movie) => (
+      <section className="moviesContainer">
+      {searchedMovie.map((movie) => (
         <Movie movie={movie} key={movie.ID}/>
-      ))
-
+      ))}
+      </section>
       : 
       
       searchedMovie && searchedMovie.length == 0?
 
-      <div>No movie was found</div>
+      <div className="NotFound">
+        <img src="./notFound.png"/>
+        <p>No movie was found</p>
+        </div>
       :
-      null}
+      null
+      }
+      {
+        !searchedMovie? <div className='explorationContainer'></div>: null
+      }
     </div>
   );
 }

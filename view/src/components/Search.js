@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./styles/Search.css"
 
 /**
  * This component contains front-end search functionality
@@ -38,7 +39,7 @@ export default function Search({ search }) {
 
     return (
       <div>
-        <form onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit} className="searchForm">
             <input type="search" value={movieTitle} placeholder="Type your  title..." onChange={changeTitleValue}></input>
             <input type="submit" value='Search'></input>
         </form>

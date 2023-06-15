@@ -1,0 +1,33 @@
+
+
+@media  screen and (min-width: 1200px){
+
+    /*POSTER*/
+
+    .individualMovieContainer{
+
+
+        
+    }
+
+    img{
+        width:100%;
+        height:90%;
+        border-radius:5px;
+        object-fit: cover;
+        cursor:pointer;
+    }
+
+    h3{
+
+        color:rgb(231, 231, 231);
+        font-weight:500;
+        border-radius: 20px;
+        display: block;
+    }
+
+    h6{
+        color:rgb(231, 231, 231);
+    }
+
+}

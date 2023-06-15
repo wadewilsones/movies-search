@@ -1,0 +1,24 @@
+@media screen and (min-width:1200px){
+
+
+    .headerContainer{
+        padding: 2em 0;
+        background:linear-gradient(180deg, rgb(25, 1, 47) 41%, rgba(49,2,93,1) 100%);
+    }
+
+    .headerContainer h3{
+
+        font-size:3em;
+        line-height: 1.7;
+        font-weight: 400;
+    }
+
+    .headerContainer h5{
+
+        font-size:1.2em;
+        color:white;
+        font-weight: 300;
+    }
+
+
+}
