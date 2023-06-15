@@ -25,7 +25,9 @@ function App() {
       <Search search = {search}></Search>
       {searchedMovie && searchedMovie.length > 0? 
       //List movies
+      
       <section className="moviesContainer">
+        <h2>Search Results:</h2>
       {searchedMovie.map((movie) => (
         <Movie movie={movie} key={movie.ID}/>
       ))}
@@ -41,9 +43,7 @@ function App() {
       :
       null
       }
-      {
-        !searchedMovie? <div className='explorationContainer'></div>: null
-      }
+
     </div>
   );
 }

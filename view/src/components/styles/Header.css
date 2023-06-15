@@ -9,13 +9,14 @@
     .headerContainer h3{
 
         font-size:3em;
+        color:white;
         line-height: 1.7;
         font-weight: 400;
     }
 
     .headerContainer h5{
 
-        font-size:1.2em;
+        font-size:2em;
         color:white;
         font-weight: 300;
     }
