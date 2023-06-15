@@ -4,8 +4,7 @@ import './styles/Movie.css';
 export default function Movie(movie) {
 
     return (
-        <div> 
-            <section class="individualMovieContainer">
+            <section className="individualMovieContainer">
                 {movie.movie.Poster != null ?  
                 <img src={`https://www.themoviedb.org/t/p/w1280/${movie.movie.Poster}`}></img> 
                 :
@@ -19,6 +18,5 @@ export default function Movie(movie) {
                 <h6>Unknown</h6>
                 }
             </section>
-        </div>
       );
 }

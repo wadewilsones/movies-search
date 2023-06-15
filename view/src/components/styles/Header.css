@@ -4,7 +4,7 @@
 
     .headerContainer{
         padding: 2em 0;
-        background:linear-gradient(180deg, rgb(25, 1, 47) 41%, rgba(49,2,93,1) 100%);
+        background:linear-gradient(0deg, rgba(36, 2, 68, 0.168) 10%, rgba(0,0,0,1) 100%);;
     }
 
     .headerContainer h3{
@@ -58,7 +58,7 @@
 
     .headerContainer{
         padding: 2em 0;
-        background:linear-gradient(180deg, rgb(25, 1, 47) 41%, rgba(49,2,93,1) 100%);
+        background:linear-gradient(0deg, rgba(49,2,93,1) 7%, rgba(0,0,0,1) 100%);
     }
 
     .headerContainer h3{
