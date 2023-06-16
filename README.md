@@ -1,5 +1,6 @@
 # Movies Search
 A web page displays popular and top-rated movies. Users can search for movies using movie Titles.
+![Screenshot 1](/Screenshot from 2023-06-16 17-18-53.png)
 
 ## Table of Contents
 
