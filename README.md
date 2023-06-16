@@ -1,6 +1,11 @@
 # Movies Search
 A web page displays popular and top-rated movies. Users can search for movies using movie Titles.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Contact](#contact)
+
 ## Installation
 The project contains 2 packages for frontend and backend. 
 1. Copy the repository using GitHub CLI on you local machine
@@ -16,7 +21,7 @@ npm init
 4. Run server
 ```
 nodemon server.js
-``
+```
 5. Navigate to fronend and start React app on localhost
 ```
 cd ..
